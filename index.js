@@ -1,8 +1,7 @@
 const express = require('express');
 const hbs = require('hbs');
 const session = require('express-session');
-var server_port = process.env.YOUR_PORT || process.env.PORT || 3000;
-var server_host = process.env.YOUR_HOST || '0.0.0.0';
+const port = process.env.PORT || 3000;
 
 const mongoose = require('mongoose');
 const MongoStore = require('connect-mongo')(session);
@@ -30,8 +29,8 @@ app.use(session({
     })
 }));
 
-app.listen(server_port, server_host, function() {
-    console.log('Listening at port ' + server_port);
+app.listen(port, function() {
+    console.log('Listening at port ' + port);
 });
 
 

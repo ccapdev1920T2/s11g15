@@ -14,9 +14,6 @@ const Product = require('../models/ProductModel.js');
 
 const app = express();
 
-app.use(express.json({limit: '50mb'}));
-app.use(express.urlencoded({limit: '50mb'}));
-
 app.get('/', controller.getHomePage);
 app.get('/restaurants/:restaurant', controller.getRestaurant);
 app.get('/history', controller.getOrderHistory);
