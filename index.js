@@ -38,6 +38,10 @@ if (port == null || port == "") {
 }
 app.listen(port);
 
+/**note: added for heroku deployment **/
+var router = express.Router();
+router.get('/');
+
 app.use('/', routes);
 
 db.connect();
