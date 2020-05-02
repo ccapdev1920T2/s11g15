@@ -5,7 +5,6 @@ const session = require('express-session');
 const mongoose = require('mongoose');
 const MongoStore = require('connect-mongo')(session);
 
-const port = 3000;
 const app = express()
 
 const db = require('./models/db.js');
@@ -29,9 +28,15 @@ app.use(session({
     })
 }));
 
-app.listen(port, function() {
+/*app.listen(port, function() {
     console.log('Listening at port ' + port);
-});
+});*/
+
+let port = process.env.PORT;
+if (port == null || port == "") {
+  port = 8000;
+}
+app.listen(port);
 
 app.use('/', routes);
 
