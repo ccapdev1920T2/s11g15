@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const url = process.env.MONGODB_URI || 'mongodb://localhost:27017/FoodBitesDB';
+const url = process.env.MONGODB_URI || 'mongodb+srv://dbUser:user123@foodbites-f5dfx.mongodb.net/test';
 const User = require('./UserModel.js');
 const Restaurant = require('./RestaurantModel.js');
 
