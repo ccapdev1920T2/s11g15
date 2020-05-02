@@ -1,0 +1,34 @@
+.body {
+    margin: 30px;
+}
+
+.card {
+    margin: 20px;
+    flex: 0 0 auto;
+}
+
+.carousel-item img {
+    width: 95%;
+    height: 450px;
+    object-fit: cover;
+    object-position: 50% 50%;
+}
+
+#rating {
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+    font-weight: 450;
+    color: lightgray;
+    letter-spacing: 0.1em;
+}
+
+#restaurant-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.star {
+    margin-right: 5px;
+}

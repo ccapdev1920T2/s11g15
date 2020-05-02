@@ -1,0 +1,25 @@
+.navbar {
+    box-shadow: 0px 7px 8px rgba(0, 0, 0, 0.2);
+}
+
+.navbar-brand img {
+    width: 160px;
+}
+
+.navpopup > form {
+    margin: 15px;
+    width: 400;
+    height: 250;
+}
+
+#signuperror {
+	color: red;
+}
+
+iframe{
+	display: none;
+}
+
+.modal-message-text {
+	padding: 15px
+}

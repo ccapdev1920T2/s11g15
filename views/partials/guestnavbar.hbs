@@ -1,0 +1,23 @@
+<nav class="navbar sticky-top navbar-dark bg-dark">
+    <a class="navbar-brand" href="/"><img src="/images/logo.png"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        {{#if userID}}
+        <div class="navbar-nav li-true">
+            <a class="nav-item nav-link active" href="/">Home</a>
+            <a class="nav-item nav-link" id="userHistory" href="/history">Order History</a>
+            <a class="nav-item nav-link" id="userSettings" href="/settings">Settings</a>
+            <a class="nav-item nav-link" href="/logout">Log Out</a>
+        </div>
+        {{else}}
+        <div class="navbar-nav li-false">
+            <a class="nav-item nav-link active" href="/">Home</a>
+            <a class="nav-item nav-link" data-toggle="modal" data-target="#loginmodal">Log In</a>
+            <a class="nav-item nav-link" data-toggle="modal" data-target="#signupmodal">Sign Up</a>
+        </div>
+        {{/if}}
+    </div>
+</nav>

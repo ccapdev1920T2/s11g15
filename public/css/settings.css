@@ -1,0 +1,19 @@
+.body {
+    margin: 30px;
+}
+
+.card {
+    margin: 20px;
+    flex: 0 0 auto;
+}
+
+.card-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#con button {
+
+    font-weight: 0 !important;
+}

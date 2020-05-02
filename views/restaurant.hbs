@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title> FoodBites </title>
+
+    <link rel="icon" href="/images/mini-logo.png" type="image/icon type">
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="/js/validator.min.js" type="text/javascript"></script>
+    <script src="/js/restaurant.js" type="text/javascript"></script>
+    <script src="/js/signup.js" type="text/javascript"></script>
+    <script src="/js/login.js" type="text/javascript"></script>
+
+    <link rel="stylesheet" type="text/css" href="/css/navbar.css">
+    <link rel="stylesheet" type="text/css" href="/css/buttons.css">
+    <link rel="stylesheet" type="text/css" href="/css/restaurant.css">
+</head>
+
+<body>
+
+    {{> guestnavbar flag=flag userID=userID}} {{> message}}
+
+    <img src="/images/{{mainBanner}}" class="banner d-block w-100">
+    <!--<div class="banner"></div> -->
+    <div class="body">
+
+        <!-- RESTAURANT NAME -->
+        <div class="restaurant-title">
+            <div class="restaurant-info">
+                <h3>{{restaurantName}}</h3>
+                <span id="rating">
+                        <img src="/images/star.svg" alt="star" class="star sprite"> {{restaurantRating}} / 5
+                    </span>
+            </div>
+            <button class="give-rating">Give Rating</button>
+        </div>
+
+        <hr w-100>
+
+        <!-- LIST OF DISHES -->
+        <ul class="dish-list">
+
+            {{#each menu}}
+
+            <!-- POPUP WINDOW FOR ADD TO CART -->
+
+            <div id={{menuID}} class="popup">
+                <div class="popup-content">
+                    <span id="modal-close-button" class="close" onclick="closeMenuModal('{{menuID}}');">&times;</span>
+
+                    <h1>Add to Cart</h1>
+                    <div class="popup-innercontent">
+                        <div class="popup-innercontent-details row">
+                            {{#if ../userID}}
+                            <h6 class="col-sm-4">{{this.menuName}}</h6>
+
+                            <form method="post" action="/add-to-cart/{{../restaurantID}}/{{menuID}}" target="frame" class="d-inline-flex add-cart-form col-sm-8 justify-content-between align-items-center">
+                                <div id="add-cart-input">
+                                    <p>Enter Amount:</p>
+                                    <input type="number" name="quantity" id="{{menuID}}-input-quantity" class="quantity" value="1" min=1></input>
+                                </div>
+                                <div id="add-cart-btn">
+                                    <button href="/add-to-cart/{{../restaurantID}}/{{menuID}}/" type="submit" onclick="appendProduct('{{menuID}}', '{{menuImg}}', '{{menuPriceF}}', '{{menuName}}'); $('#{{menuID}}').css('display', 'none');">Add To Cart</button>
+                                </div>
+                            </form>
+
+                            {{else}}
+                            <h5 class="login-msg">Please Log In or Register an Account First</h5> {{/if}}
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <li>
+                <div class="dish-wrapper">
+                    <div class="dish-img">
+                        <img src="/images/{{menuImg}}">
+                    </div>
+                    <div class="dish-info">
+                        <div class="dish-text">
+                            <h5>{{menuName}}</h5>
+                            <p>{{menuDesc}}</p>
+                        </div>
+                        <div class="dish-price-btn">
+                            <p><span>PHP {{menuPriceF}}</span></p>
+                            <button type="button" id="appendProduct" onclick="$('#{{menuID}}-input-quantity').val(1); showMenuModal('{{menuID}}');">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+            <br>
+            <br>
+            <br> {{/each}}
+
+        </ul>
+
+        <hr w-100>
+
+        <!-----=======================================================EXTRAS====================================================------------>
+
+        <!--FLOATING CART BUTTON -->
+        <a class="btn-float">
+            <!--<i class="fa fa-plus m-btn-float"></i>-->
+            <i class="material-icons">shopping_cart</i>
+        </a>
+
+        <!-- POPUP WINDOW FOR RATING -->
+
+        <div id="rating-popup" class="rating-popup">
+            <div class="rating-popup-content">
+                <span class="rating-close">&times;</span>
+
+                <div id="ratediv">
+                    <h1>Leave A Rating</h1>
+                    <div class="rating-innercontent">
+                        <h6>Rate Your Overall Experience:</h6>
+                        <!--STARS=============================-->
+                        <form name="rateform" method="post" action="/rate" id="rateform" target="frame">
+                            <div class="rate">
+                                <input type="hidden" name="restaurantID" value="{{restaurantID}}">
+                                <input type="radio" id="star5" name="rate" value="5" />
+                                <label for="star5" title="text">5 stars</label>
+                                <input type="radio" id="star4" name="rate" value="4" />
+                                <label for="star4" title="text">4 stars</label>
+                                <input type="radio" id="star3" name="rate" value="3" />
+                                <label for="star3" title="text">3 stars</label>
+                                <input type="radio" id="star2" name="rate" value="2" />
+                                <label for="star2" title="text">2 stars</label>
+                                <input type="radio" id="star1" name="rate" value="1" />
+                                <label for="star1" title="text">1 star</label>
+                            </div>
+
+                            <button class="submit-rating" type="button">Rate</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- POPUP WINDOW FOR CART LIST -->
+
+        <div id="cart-popup" class="cart-popup">
+            <div class="cart-popup-content">
+                <span class="cart-close">&times;</span>
+
+                <h1>Your Cart</h1>
+
+                <div class="cart-list">
+                    <div class="cart-labels">
+                        <label class="cart-product-name col-sm-4">Product</label>
+                        <label class="cart-price col-sm-2">Price</label>
+                        <label class="cart-quantity col-sm-2">Quantity</label>
+                        <label class="cart-price col-sm-2">Total</label>
+                    </div>
+
+                    <div id="orders-list">
+
+                        <h3 class="cart-message text-center cart-hide">Your Cart is Empty!</h3> {{#each cart}}
+                        <div id="cart-item-{{menuID}}" class="cart-item cart-show from-cart">
+                            <div class="cart-details">
+                                <div class="cart-image col-sm-4">
+                                    <img src="/images/{{menuImg}}">
+                                    <h6 class="item-name">{{menuName}}</h6>
+                                </div>
+                                <div class="cart-price col-sm-2">PHP {{menuPriceF}}</div>
+                                <div class="cart-quantity col-sm-2" id="{{menuID}}-quantity">{{quantity}}</div>
+                                <div class="cart-price-total col-sm-2" id="{{menuID}}-total">{{total}}</div>
+                                <div class="cart-remove col-sm-2">
+                                    <button class="remove-cart" onclick="deleteItem('{{menuID}}');"> Remove </button>
+                                </div>
+                            </div>
+                        </div>
+                        {{/each}} {{#each menu}}
+                        <div id="cart-item-{{menuID}}" class="cart-item cart-hide from-menu">
+                            <div class="cart-details">
+                                <div class="cart-image col-sm-4">
+                                    <img src="/images/{{menuImg}}">
+                                    <h6 class="item-name">{{menuName}}</h6>
+                                </div>
+                                <div class="cart-price col-sm-2">PHP {{menuPriceF}}</div>
+                                <div class="cart-quantity col-sm-2" id="{{menuID}}-quantity"></div>
+                                <div class="cart-price-total col-sm-2" id="{{menuID}}-total"></div>
+                                <div class="cart-remove col-sm-2">
+                                    <button class="remove-cart" onclick="deleteItem('{{menuID}}');"> Remove </button>
+                                </div>
+                            </div>
+                        </div>
+                        {{/each}}
+                    </div>
+
+                    <div class="checkout-div">
+                        <button class="checkout-button" aria-disabled="true">Proceed To Checkout</button>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+        {{> modals}}
+
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+</body>
+
+</html>

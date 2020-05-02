@@ -1,0 +1,10 @@
+.btn-primary {
+    background-color: black;
+    flex-grow: 1;
+    border-radius: 0;
+    border-color: transparent !important;
+}
+
+.btn-primary:hover {
+    background-color: #c7493a !important;
+}
