@@ -24,6 +24,7 @@
     "node": "12.16.1"
   },
   "scripts": {
-  "start": "node index.js"
+  "start": "node index.js",
+  "heroku-postbuild": "npm install --prefix client && npm run build --prefix client"
   }
 }

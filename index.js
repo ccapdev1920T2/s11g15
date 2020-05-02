@@ -38,9 +38,16 @@ if (port == null || port == "") {
 }
 app.listen(port);
 
-/**note: added for heroku deployment **/
-var router = express.Router();
-router.get('/');
+if (process.env.NODE_ENV === 'production') {
+	app.use(express.static("build"));
+
+
+	app.get("*", (req, res) => {
+	    res.sendFile(path.resolve(__dirname,  "build", "index.html"));
+	});
+
+}
+
 
 app.use('/', routes);
 
