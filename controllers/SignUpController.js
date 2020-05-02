@@ -57,7 +57,7 @@ const signupController = {
                             text: 'Good day, ' + result.fname + '!\n\n' + 'Please verify your account by following this link:\nhttp:\/\/' + req.headers.host + '\/confirmation\/' + token.token + '\n'
                         }
 
-                        await transporter.sendMail(mail, function(err) {
+                        transporter.sendMail(mail, function(err) {
                             if (err) {
                                 console.log("Error sending mail.");
                                 return res.status(500).send({
