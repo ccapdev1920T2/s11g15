@@ -8,6 +8,7 @@ const Order = require('../models/OrderModel.js');
 const controller = {
 
     getRestaurant: async function(req, res) {
+        try{
         var rName = req.params.restaurant;
         var query = {
             restaurantID: rName
@@ -36,10 +37,15 @@ const controller = {
                 })
             }
         });
+
+
+        } catch (error) {
+        console.log('There was an error: ', error);
+        }
     },
 
     getHomePage: async function(req, res) {
-
+        try{
         db.find(Restaurant, null, null, function(result) {
             var details = {
                 restaurant: result,
@@ -67,9 +73,14 @@ const controller = {
             res.render('home', details)
         });
 
+        } catch (error) {
+        console.log('There was an error: ', error);
+        }
+
     },
 
     getOrderHistory: async function(req, res) {
+        try{
         var userID = req.session.userID;
         var query = {
             _id: userID
@@ -88,10 +99,15 @@ const controller = {
         } else
             res.render("error", {
                 details: "Please Log In or Register an Account"
-            })
+            });
+
+        } catch (error) {
+        console.log('There was an error: ', error);
+        }
     },
 
     getSettings: async function(req, res) {
+        try{
         var userID = req.session.userID;
         var query = {
             _id: userID
@@ -105,9 +121,14 @@ const controller = {
             res.render("error", {
                 details: "Please Log In or Register an Account"
             })
+
+        } catch (error) {
+        console.log('There was an error: ', error);
+        }
     },
 
     getCheckout: async function(req, res) {
+        try{
         var items = req.session.cart;
         var userID = req.session.userID;
 
@@ -130,10 +151,14 @@ const controller = {
                 res.render("checkout", result)
             });
         }
+
+        } catch (error) {
+        console.log('There was an error: ', error);
+        }
     },
 
     getVerification: async function(req, res) {
-
+        try{
         var token = req.params.token;
 
         db.findOne(Verification, {token: token}, null, function(result) {
@@ -141,6 +166,10 @@ const controller = {
                 token: result.token
             });
         });
+
+        } catch (error) {
+        console.log('There was an error: ', error);
+        }
     }
 }
 

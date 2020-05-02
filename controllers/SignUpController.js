@@ -11,6 +11,7 @@ var nodemailer = require('nodemailer');
 const signupController = {
 
     postSignUp: async function(req, res) {
+       try{
         var fName = req.body.fname;
         var lName = req.body.lname;
         var email = req.body.emailnew;
@@ -79,19 +80,28 @@ const signupController = {
 
         })
 
+        } catch (error) {
+        console.log('There was an error: ', error);
+        }
+
 
     },
 
     getCheckEmail: async function(req, res) {
+        try{
         var email = req.query.email;
 
         db.findOne(User, {email: email}, 'email', function(result) {
             res.send(result);
         });
+
+        } catch (error) {
+        console.log('There was an error: ', error);
+        }
     },
 
     postConfirmation: async function(req, res) {
-
+        try{
         console.log(req.body.token);
 
         Verification.findOne({token: req.body.token}, function(err, result) {
@@ -141,6 +151,11 @@ const signupController = {
 
 
         });
+
+        } catch (error) {
+        console.log('There was an error: ', error);
+        }
+
     }
 
 }

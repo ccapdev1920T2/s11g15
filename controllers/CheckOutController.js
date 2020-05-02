@@ -6,6 +6,7 @@ const User = require('../models/UserModel.js');
 const checkoutController = {
 
     postOrder: async function(req, res) {
+        try{
         var order = {
             userID: req.session.userID,
             orderDate: req.body.orderDate,
@@ -32,6 +33,11 @@ const checkoutController = {
                 }
             })
         })
+
+        } catch (error) {
+        console.log('There was an error: ', error);
+        }
+
     }
 }
 

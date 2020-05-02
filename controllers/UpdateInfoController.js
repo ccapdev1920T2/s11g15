@@ -5,6 +5,7 @@ const User = require('../models/UserModel.js');
 const updateInfoController = {
 
     updateInfo: async function(req, res) {
+        try{
         console.log("updateInfo!");
         console.log(req.body);
         var num = req.body.inputnum;
@@ -22,6 +23,10 @@ const updateInfoController = {
                 res.send(result1);
             });
         });
+
+        } catch (error) {
+        console.log('There was an error: ', error);
+        }
     }
 
 }

@@ -4,6 +4,7 @@ const Product = require('../models/ProductModel.js');
 const cartController = {
 
     addToCart: async function(req, res) {
+        try{
         var menuID = req.params.menuID;
         var restaurantID = req.params.restaurantID;
 
@@ -74,11 +75,16 @@ const cartController = {
             res.redirect(req.get('referer'));
         });
 
+        } catch (error) {
+        console.log('There was an error: ', error);
+        }
+
 
 
     },
 
     deleteFromCart: async function(req, res) {
+    try{
         var cart = req.session.cart;
 
         var i = 0;
@@ -93,6 +99,11 @@ const cartController = {
         console.log(req.session.cart);
 
         res.redirect(303, req.get('referer'));
+
+
+        } catch (error) {
+        console.log('There was an error: ', error);
+        }
     }
 }
 

@@ -6,6 +6,7 @@ const bcrypt = require('bcrypt');
 const loginController = {
 
     postLogIn: async function(req, res) {
+        try{
         var email = req.body.email;
         var pw = req.body.pass;
 
@@ -13,9 +14,14 @@ const loginController = {
             res.send(result);
         });
 
+        } catch (error) {
+        console.log('There was an error: ', error);
+        }
+
     },
 
     getLogIn: async function(req, res) {
+        try{
         var email = req.query.email;
         var pw = req.query.pw;
 
@@ -34,6 +40,10 @@ const loginController = {
                 })
             } else res.send(false)
         });
+
+        } catch (error) {
+        console.log('There was an error: ', error);
+        }
     }
 }
 

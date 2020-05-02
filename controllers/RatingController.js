@@ -5,6 +5,7 @@ const Restaurant = require('../models/RestaurantModel.js');
 const ratingController = {
 
     postRate: async function(req, res) {
+        try{
         var resID = req.body.restaurantID
         var rate = {
             restaurantID: resID,
@@ -30,6 +31,10 @@ const ratingController = {
 
             })
         })
+
+        } catch (error) {
+        console.log('There was an error: ', error);
+        }
     }
 }
 
