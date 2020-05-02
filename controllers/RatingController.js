@@ -4,7 +4,7 @@ const Restaurant = require('../models/RestaurantModel.js');
 
 const ratingController = {
 
-    postRate: function(req, res) {
+    postRate: async function(req, res) {
         var resID = req.body.restaurantID
         var rate = {
             restaurantID: resID,

@@ -10,7 +10,7 @@ var nodemailer = require('nodemailer');
 
 const signupController = {
 
-    postSignUp: function(req, res) {
+    postSignUp: async function(req, res) {
         var fName = req.body.fname;
         var lName = req.body.lname;
         var email = req.body.emailnew;
@@ -57,7 +57,7 @@ const signupController = {
                             text: 'Good day, ' + result.fname + '!\n\n' + 'Please verify your account by following this link:\nhttp:\/\/' + req.headers.host + '\/confirmation\/' + token.token + '\n'
                         }
 
-                        transporter.sendMail(mail, function(err) {
+                        await transporter.sendMail(mail, function(err) {
                             if (err) {
                                 console.log("Error sending mail.");
                                 return res.status(500).send({
@@ -82,7 +82,7 @@ const signupController = {
 
     },
 
-    getCheckEmail: function(req, res) {
+    getCheckEmail: async function(req, res) {
         var email = req.query.email;
 
         db.findOne(User, {email: email}, 'email', function(result) {
@@ -90,7 +90,7 @@ const signupController = {
         });
     },
 
-    postConfirmation: function(req, res) {
+    postConfirmation: async function(req, res) {
 
         console.log(req.body.token);
 

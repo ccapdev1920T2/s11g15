@@ -4,7 +4,7 @@ const User = require('../models/UserModel.js');
 
 const updateInfoController = {
 
-    updateInfo: function(req, res) {
+    updateInfo: async function(req, res) {
         console.log("updateInfo!");
         console.log(req.body);
         var num = req.body.inputnum;

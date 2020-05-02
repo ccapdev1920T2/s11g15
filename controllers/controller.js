@@ -7,7 +7,7 @@ const Order = require('../models/OrderModel.js');
 
 const controller = {
 
-    getRestaurant: function(req, res) {
+    getRestaurant: async function(req, res) {
         var rName = req.params.restaurant;
         var query = {
             restaurantID: rName
@@ -38,7 +38,7 @@ const controller = {
         });
     },
 
-    getHomePage: function(req, res) {
+    getHomePage: async function(req, res) {
 
         db.find(Restaurant, null, null, function(result) {
             var details = {
@@ -69,7 +69,7 @@ const controller = {
 
     },
 
-    getOrderHistory: function(req, res) {
+    getOrderHistory: async function(req, res) {
         var userID = req.session.userID;
         var query = {
             _id: userID
@@ -91,7 +91,7 @@ const controller = {
             })
     },
 
-    getSettings: function(req, res) {
+    getSettings: async function(req, res) {
         var userID = req.session.userID;
         var query = {
             _id: userID
@@ -107,7 +107,7 @@ const controller = {
             })
     },
 
-    getCheckout: function(req, res) {
+    getCheckout: async function(req, res) {
         var items = req.session.cart;
         var userID = req.session.userID;
 
@@ -132,7 +132,7 @@ const controller = {
         }
     },
 
-    getVerification: function(req, res) {
+    getVerification: async function(req, res) {
 
         var token = req.params.token;
 

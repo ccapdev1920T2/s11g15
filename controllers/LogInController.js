@@ -5,7 +5,7 @@ const bcrypt = require('bcrypt');
 
 const loginController = {
 
-    postLogIn: function(req, res) {
+    postLogIn: async function(req, res) {
         var email = req.body.email;
         var pw = req.body.pass;
 
@@ -15,7 +15,7 @@ const loginController = {
 
     },
 
-    getLogIn: function(req, res) {
+    getLogIn: async function(req, res) {
         var email = req.query.email;
         var pw = req.query.pw;
 

@@ -5,7 +5,7 @@ const User = require('../models/UserModel.js');
 
 const checkoutController = {
 
-    postOrder: function(req, res) {
+    postOrder: async function(req, res) {
         var order = {
             userID: req.session.userID,
             orderDate: req.body.orderDate,

@@ -3,7 +3,7 @@ const Product = require('../models/ProductModel.js');
 
 const cartController = {
 
-    addToCart: function(req, res) {
+    addToCart: async function(req, res) {
         var menuID = req.params.menuID;
         var restaurantID = req.params.restaurantID;
 
@@ -78,7 +78,7 @@ const cartController = {
 
     },
 
-    deleteFromCart: function(req, res) {
+    deleteFromCart: async function(req, res) {
         var cart = req.session.cart;
 
         var i = 0;
