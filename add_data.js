@@ -170,7 +170,7 @@ db.insertOne(Restaurant, restaurant, function() {});
 
 //KANTO FREESTYLE
 var restaurant = {
-    mainBanner: 'kf_banner.jpg',
+    mainBanner: 'kantof_banner.jpg',
     restaurantID: 'kantofreestyle',
     restaurantName: "Kanto Freestyle",
     restaurantRating: 5,
