@@ -520,38 +520,38 @@ db.insertOne(Product, product, function() {});
 
 
 
-//KANTO FREESTYLE
+//CHOMP
 var product = {
-    restaurantID: 'kantofreestyle',
+    restaurantID: 'chompchomp',
     menuID: '120151',
-    menuImg: 'kf_chicken.jpg',
-    menuName: 'Honey Garlic Chicken',
-    menuDesc: 'Glazed chicken served with tomato pesto.',
-    menuPrice: '138.00'
+    menuImg: 'chomp_rolls.jpg',
+    menuName: 'Beef Rolls',
+    menuDesc: 'Beef rolls on a stick.',
+    menuPrice: '120.00'
 };
 
 db.insertOne(Product, product, function() {});
 
 
 var product = {
-    restaurantID: 'kantofreestyle',
+    restaurantID: 'chompchomp',
     menuID: '120152',
-    menuImg: 'kf_cornbif.jpg',
-    menuName: 'Crispy Corned Beef',
-    menuDesc: "Three pieces of fried corned beef balls served with tomato pesto.",
-    menuPrice: '132.00'
+    menuImg: 'chomp_laksa.jpg',
+    menuName: 'Laksa Noodles',
+    menuDesc: "Hot and steamy laksa noodles.",
+    menuPrice: '135.00'
 };
 
 db.insertOne(Product, product, function() {});
 
 
 var product = {
-    restaurantID: 'kantofreestyle',
+    restaurantID: 'chompchomp',
     menuID: '120153',
-    menuImg: 'kf_pancake.jpg',
-    menuName: 'Fluffy Pancakes 3 Layers',
-    menuDesc: 'Three pieces of pancakes topped with melted chocolate.',
-    menuPrice: '88.00'
+    menuImg: 'chomp_bbq.jpg',
+    menuName: 'Pork Barbeque',
+    menuDesc: '2 pcs. barbeque sticks.',
+    menuPrice: '120.00'
 };
 
 db.insertOne(Product, product, function() {});

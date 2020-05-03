@@ -168,13 +168,13 @@ var restaurant = {
 
 db.insertOne(Restaurant, restaurant, function() {});
 
-//KANTO FREESTYLE
+//CHOMP
 var restaurant = {
-    mainBanner: 'kantof_banner.jpg',
-    restaurantID: 'kantofreestyle',
-    restaurantName: "Kanto Freestyle",
+    mainBanner: 'chomp_banner.jpg',
+    restaurantID: 'chompchomp',
+    restaurantName: "Chomp Chomp",
     restaurantRating: 5,
-    restaurantDescription: 'All-day breakfast restaurant featuring Filipino and Western fare.'
+    restaurantDescription: 'Serves amazing Singaporean dishes.'
 };
 
 db.insertOne(Restaurant, restaurant, function() {});
