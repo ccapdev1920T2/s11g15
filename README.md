@@ -1,6 +1,6 @@
 # FoodBites
 
-![GitHub Logo](/public/images/logo.png)\
+![GitHub Logo](/public/images/logo.png)
 
 A food delivery application that contains a variety of restaurants and food to choose from! Visitors and users are able to view the restaurants and menus available, however, only logged in users are able to add the food items to their cart, checkout, and have their orders delivered.
 
