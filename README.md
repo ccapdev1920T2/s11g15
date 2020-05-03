@@ -10,9 +10,10 @@ The following are the contents of the project:
 * public - This folder contains static files such as css, js, and images.
 * routes - This folder contains files that describe the response of the server given an HTTP method request to a path in the server.
 * views - This folder contains all .hbs files that can be rendered to the server.
-* add_data.js - This script creates the database and inserts the restaurant data.
-* add_products.js - This script creates the database and inserts product data.
-* add_users.js - This script creates the database and adds user data.
+* add_data.js - This script inserts restaurant data into the database.
+* add_products.js - This script inserts product data into the database.
+* add_users.js - This script inserts user data into the database.
+* add_rate.js - This script inserts restaurant rate data into the database.
 * restart_data.js - This script drops the database and deletes all data.
 * index.js - The main entry point of the application.
 
@@ -44,6 +45,11 @@ npm install mongoose
 npm install bcrypt
 npm install mongodb
 npm install connect-mongo
+npm install grunt grunt-cli
+npm install --save-exact grunt-contrib-uglify
+npm install --save-exact grunt-contrib-concat
+npm install --save-exact grunt-contrib-cssmin
+npm install --save-exact grunt-contrib-watch
 ```
 4. Run the following files to set up necessary documents in the database.
 ```
@@ -69,6 +75,7 @@ Connected to: mongodb://localhost:27017/FoodBitesDB
 * Bcrypt
 * Nodemailer
 * Crypto
+* Grunt
 
 ## Authors
 CCAPDEV S11 Group 15
