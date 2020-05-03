@@ -68,7 +68,7 @@ bcrypt.hash(user.pw, saltRounds, function(err, hash) {
 */
 
 var user = {
-    email: "abigail@skajfk.com",
+    email: "abigail@test.com",
     pw: "abi123",
     fname: "Abigail",
     lname: "Wan",
