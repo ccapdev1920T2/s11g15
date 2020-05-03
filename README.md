@@ -29,7 +29,7 @@ You will need the following before running the project:
 * Node.js
 * MongoDB
 
-### Installing & Running
+### Installing & Running on Localhost
 
 1. Clone the repository by downloading the contents of the repository or if git is installed, the following command may be used:
 ```
@@ -67,6 +67,22 @@ Connected to: mongodb://localhost:27017/FoodBitesDB
 ```
 6. Next, paste the following path on a browser to run the web application: `http://localhost:3000/`.
 7. The path automatically navigates to the homepage and will be ready for testing.
+
+### Heroku
+
+The heroku deployment of the project can be accessed through this link:
+`http://foodbites.herokuapp.com/`
+
+### Log In Information
+
+The following accounts may be used to test the application. All accounts have been marked as verified and would not have any need to have a verification email sent to the accounts.
+
+|     Email        |   Password    |
+| ---------------- | ------------- |
+| arren@test.com   | arren123      |
+| regina@test.com  | regina123     |
+| mikayla@test.com | mika123       |
+| abigail@test.com | abi123        |
 
 ## Dependencies
 * Mongoose
