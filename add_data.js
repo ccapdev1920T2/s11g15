@@ -236,7 +236,7 @@ db.insertOne(Restaurant, restaurant, function() {});
 
 
 var restaurant = {
-    mainBanner: 'sample.jpg',
+    mainBanner: 'sample.png',
     restaurantID: 'sample',
     restaurantName: "Sample",
     restaurantRating: 4,
