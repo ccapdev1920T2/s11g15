@@ -524,7 +524,7 @@ db.insertOne(Product, product, function() {});
 var product = {
     restaurantID: 'chompchomp',
     menuID: '120151',
-    menuImg: 'chomp_rolls.jpg',
+    menuImg: 'chorolls.jpg',
     menuName: 'Beef Rolls',
     menuDesc: 'Beef rolls on a stick.',
     menuPrice: '120.00'
@@ -536,7 +536,7 @@ db.insertOne(Product, product, function() {});
 var product = {
     restaurantID: 'chompchomp',
     menuID: '120152',
-    menuImg: 'chomp_laksa.jpg',
+    menuImg: 'cholaksa.jpg',
     menuName: 'Laksa Noodles',
     menuDesc: "Hot and steamy laksa noodles.",
     menuPrice: '135.00'
@@ -548,7 +548,7 @@ db.insertOne(Product, product, function() {});
 var product = {
     restaurantID: 'chompchomp',
     menuID: '120153',
-    menuImg: 'chomp_bbq.jpg',
+    menuImg: 'chobbq.jpg',
     menuName: 'Pork Barbeque',
     menuDesc: '2 pcs. barbeque sticks.',
     menuPrice: '120.00'

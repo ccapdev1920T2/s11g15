@@ -5,7 +5,7 @@ db.connect();
 
 const collection = 'restaurants';
 const Restaurant = require('./models/RestaurantModel.js');
-
+/*
 //MCDONALDS
 var restaurant = {
     mainBanner: 'mcdo_banner.jpg',
@@ -167,10 +167,10 @@ var restaurant = {
 };
 
 db.insertOne(Restaurant, restaurant, function() {});
-
+*/
 //CHOMP
 var restaurant = {
-    mainBanner: 'chomp_banner.jpg',
+    mainBanner: 'chobanner.jpg',
     restaurantID: 'chompchomp',
     restaurantName: "Chomp Chomp",
     restaurantRating: 5,
@@ -179,6 +179,7 @@ var restaurant = {
 
 db.insertOne(Restaurant, restaurant, function() {});
 
+/*
 //TORI BOX
 var restaurant = {
     mainBanner: 'tb_banner.jpg',
@@ -233,3 +234,5 @@ var restaurant = {
 };
 
 db.insertOne(Restaurant, restaurant, function() {});
+
+*/
