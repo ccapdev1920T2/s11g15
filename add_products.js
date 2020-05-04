@@ -509,7 +509,7 @@ db.insertOne(Product, product, function() {});
 var product = {
     restaurantID: 'flamingwings',
     menuID: '120143',
-    menuImg: 'fw_steak.jpg',
+    menuImg: 'fw_steak.webp',
     menuName: 'Super Stuffed Pork chops',
     menuDesc: 'Pork loin served with java rice.',
     menuPrice: '250.00'
@@ -680,7 +680,7 @@ db.insertOne(Product, product, function() {});
 var product = {
     restaurantID: 'armynavy',
     menuID: '120191',
-    menuImg: 'an_burger.jpg',
+    menuImg: 'an_burger.JPG',
     menuName: 'Classic Burger',
     menuDesc: 'Single quarter-pound beef patty.',
     menuPrice: '200.00'
@@ -743,7 +743,7 @@ db.insertOne(Product, product, function() {});
 var product = {
     restaurantID: 'burgerking',
     menuID: '120203',
-    menuImg: 'bk_onion.jpg',
+    menuImg: 'bk_onion.png',
     menuName: 'Onion Rings',
     menuDesc: 'Onion slices covered with batter and breadcrumbs.',
     menuPrice: '40.00'
