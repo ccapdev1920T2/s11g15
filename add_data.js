@@ -171,7 +171,7 @@ db.insertOne(Restaurant, restaurant, function() {});
 //CHOMP
 var restaurant = {
     mainBanner: 'chobanner.jpg',
-    restaurantID: 'chompchomp',
+    restaurantID: 'chomp1',
     restaurantName: "Chomp Chomp",
     restaurantRating: 5,
     restaurantDescription: 'Serves amazing Singaporean dishes.'
