@@ -32,7 +32,7 @@ db.insertOne(Restaurant, restaurant, function() {});
 var restaurant = {
     mainBanner: 'kfc_banner.jpg',
     restaurantID: 'kfc',
-    restaurantName: "Kentucky Fried Chicken",
+    restaurantName: "KFC",
     restaurantRating: 4,
     restaurantDescription: 'A fast food chain that specializes in fried chicken.'
 };

@@ -69,7 +69,7 @@ bcrypt.hash(user.pw, saltRounds, function(err, hash) {
 
 var user = {
     email: "abigail@test.com",
-    pw: "abi123",
+    pw: "Abitest246?",
     fname: "Abigail",
     lname: "Wan",
     isConfirmed: true
