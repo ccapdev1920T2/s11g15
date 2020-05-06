@@ -12,7 +12,7 @@ const User = require('./models/UserModel.js');
 /*
 var user = {
     email: "arren@test.com",
-    pw: "arren123",
+    pw: "Arrentest246?",
     fname: "Arren",
     lname: "Antioquia",
     isConfirmed: true
@@ -30,7 +30,7 @@ bcrypt.hash(user.pw, saltRounds, function(err, hash) {
 })
 var user = {
     email: "regina@test.com",
-    pw: "regina123",
+    pw: "Reginatest246?",
     fname: "Regina",
     lname: "Masilang",
     isConfirmed: true
@@ -49,7 +49,7 @@ bcrypt.hash(user.pw, saltRounds, function(err, hash) {
 
 var user = {
     email: "mikayla@test.com",
-    pw: "mika123",
+    pw: "Mikatest246?",
     fname: "Mikayla",
     lname: "Tejada",
     isConfirmed: true
