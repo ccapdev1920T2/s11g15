@@ -52,6 +52,7 @@ npm install --save-exact grunt-contrib-uglify
 npm install --save-exact grunt-contrib-concat
 npm install --save-exact grunt-contrib-cssmin
 npm install --save-exact grunt-contrib-watch
+npm install --save helmet
 ```
 4. Run the following files to set up necessary documents in the database.
 ```
@@ -94,6 +95,7 @@ The following accounts may be used to test the application. All accounts have be
 * Nodemailer
 * Crypto
 * Grunt
+* Helmet
 
 ## Authors
 CCAPDEV S11 Group 15
