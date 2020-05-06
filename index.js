@@ -20,10 +20,17 @@ app.use(express.urlencoded({
 }));
 app.use(express.static('public'));
 
+var helmet = require('helmet');
+app.use(helmet());
+
 app.use(session({
     'secret': 'a',
     'resave': true,
     'saveUninitialized': true,
+    cookie: {
+    	httpOnly: true,
+    	secure: true
+    },
     store: new MongoStore({
         mongooseConnection: mongoose.connection
     })
