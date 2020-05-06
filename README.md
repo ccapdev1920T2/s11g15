@@ -80,10 +80,10 @@ The following accounts may be used to test the application. All accounts have be
 
 |     Email        |   Password    |
 | ---------------- | ------------- |
-| arren@test.com   | arren123      |
-| regina@test.com  | regina123     |
-| mikayla@test.com | mika123       |
-| abigail@test.com | abi123        |
+| arren@test.com   | Arrentest246? |
+| regina@test.com  | Reginatest246?|
+| mikayla@test.com | Mikatest246?  |
+| abigail@test.com | Abitest246?   |
 
 ## Dependencies
 * Mongoose
