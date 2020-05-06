@@ -113,7 +113,6 @@ const controller = {
             _id: userID
         };
 
-
         if (userID) {
             db.findOne(User, query, "location contactNo", function(result) {
                 result.userID = userID;
