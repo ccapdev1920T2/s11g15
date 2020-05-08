@@ -55,9 +55,16 @@ npm install --save-exact grunt-contrib-watch
 npm install --save helmet
 ```
 4. Open the `db.js` file in the models folder. You will see the following on line 2:
-`const url = process.env.MONGODB_URI || 'mongodb+srv://dbUser:user123@foodbites-f5dfx.mongodb.net/test';`.
+```
+const url = process.env.MONGODB_URI || 'mongodb+srv://dbUser:user123@foodbites-f5dfx.mongodb.net/test';
+```
 
-Change the line to this: `const url = 'mongodb://localhost:27017/FoodBitesDB';`. This connects to localhost.
+Change the line to this: 
+```
+const url = 'mongodb://localhost:27017/FoodBitesDB';
+```
+This connects the project to localhost.
+
 **NOTE: This step can be skipped (no need to change the code), however it is important to note that when doing so, step 5 must be skipped in order not to duplicate the data in the database.**
 
 5. Run the following files to set up necessary documents in the database.
