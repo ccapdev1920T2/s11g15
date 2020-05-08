@@ -56,7 +56,9 @@ npm install --save helmet
 ```
 4. Open the `db.js` file in the models folder. You will see the following on line 2:
 `const url = process.env.MONGODB_URI || 'mongodb+srv://dbUser:user123@foodbites-f5dfx.mongodb.net/test';`.
+
 Change the line to this: `const url = 'mongodb://localhost:27017/FoodBitesDB';`. This connects to localhost.
+**NOTE: This step can be skipped (no need to change the code), however it is important to note that when doing so, step 5 must be skipped in order not to duplicate the data in the database.**
 
 5. Run the following files to set up necessary documents in the database.
 ```
@@ -69,6 +71,11 @@ node add_users.js
 ```
 Listening at port 3000
 Connected to: mongodb://localhost:27017/FoodBitesDB
+```
+Alternatively, the command prompt may display this if steps 4 and 5 were skipped:
+```
+Listening at port 3000
+Connected to: mongodb+srv://dbUser:user123@foodbites-f5dfx.mongodb.net/test
 ```
 7. Next, paste the following path on a browser to run the web application: `http://localhost:3000/`.
 8. The path automatically navigates to the homepage and will be ready for testing.
