@@ -1,9 +1,10 @@
 function appendProduct(menuID, menuImg, menuPrice, menuName) {
+    var v = document.getElementById(menuID + "-input-quantity");
 
-    var quantity = parseInt($("#" + menuID + "-input-quantity").val());
-    var total = (parseInt(quantity) * parseFloat(menuPrice)).toFixed(2);
-
-    if (quantity > 0){
+        if(v.checkValidity()){
+        var quantity = parseInt($("#" + menuID + "-input-quantity").val());
+        var total = (parseInt(quantity) * parseFloat(menuPrice)).toFixed(2);
+ 
         if ($("#cart-item-" + menuID + ".cart-show").length) {
 
         var q = parseInt(validator.trim($("#" + menuID + "-quantity").text())) + parseInt(quantity);
@@ -21,7 +22,7 @@ function appendProduct(menuID, menuImg, menuPrice, menuName) {
         }
 
     }
-    
+ 
 }
 
 function showMenuModal(menuID) {
