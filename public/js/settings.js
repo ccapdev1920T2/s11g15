@@ -29,7 +29,7 @@ $(document).ready(function() {
             $("#editform").submit();
             setTimeout(function() {
                 window.location.reload();
-            }, 1000);
+            }, 500);
         }
 
     });
