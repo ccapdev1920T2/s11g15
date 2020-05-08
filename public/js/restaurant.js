@@ -1,6 +1,5 @@
 function appendProduct(menuID, menuImg, menuPrice, menuName) {
     var v = document.getElementById(menuID + "-input-quantity");
-
         if(v.checkValidity()){
         var quantity = parseInt($("#" + menuID + "-input-quantity").val());
         var total = (parseInt(quantity) * parseFloat(menuPrice)).toFixed(2);
@@ -21,6 +20,10 @@ function appendProduct(menuID, menuImg, menuPrice, menuName) {
 
         }
 
+        $("#" + menuID).css("display", "none");
+    }
+    else {
+        $("#" + menuID + "-input-quantity").css('border-color', 'red');
     }
  
 }
