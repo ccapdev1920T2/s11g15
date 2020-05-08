@@ -3,21 +3,25 @@ function appendProduct(menuID, menuImg, menuPrice, menuName) {
     var quantity = parseInt($("#" + menuID + "-input-quantity").val());
     var total = (parseInt(quantity) * parseFloat(menuPrice)).toFixed(2)
 
-    if ($("#cart-item-" + menuID + ".cart-show").length) {
+    if (quantity > 0){
+        if ($("#cart-item-" + menuID + ".cart-show").length) {
 
         var q = parseInt(validator.trim($("#" + menuID + "-quantity").text())) + parseInt(quantity);
 
         $("#" + menuID + "-quantity").text(q);
         $("#" + menuID + "-total").text(parseFloat(q * parseFloat(menuPrice)).toFixed(2))
-    } else {
-        var cartItem = $("#cart-item-" + menuID + ".cart-hide")
-        cartItem.removeClass('cart-hide')
-        cartItem.addClass('cart-show')
+        } else {
+            var cartItem = $("#cart-item-" + menuID + ".cart-hide")
+            cartItem.removeClass('cart-hide')
+            cartItem.addClass('cart-show')
 
-        $("#" + menuID + "-quantity").text(quantity);
-        $("#" + menuID + "-total").text(total);
+            $("#" + menuID + "-quantity").text(quantity);
+            $("#" + menuID + "-total").text(total);
+
+        }
 
     }
+    
 }
 
 function showMenuModal(menuID) {
