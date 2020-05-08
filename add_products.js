@@ -136,7 +136,7 @@ var product = {
     restaurantID: 'dominos',
     menuID: '12042',
     menuImg: 'cheese.jpg',
-    menuName: '1pc. Original Recipe Chicken',
+    menuName: 'Cheese Mania',
     menuDesc: "A light pizza that's bursting with flavor.",
     menuPrice: '190.00'
 };
