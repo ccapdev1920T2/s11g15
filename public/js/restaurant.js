@@ -21,6 +21,7 @@ function appendProduct(menuID, menuImg, menuPrice, menuName) {
         }
 
         $("#" + menuID).css("display", "none");
+        $("#" + menuID + "-input-quantity").css('border-color', 'lightgray');
     }
     else {
         $("#" + menuID + "-input-quantity").css('border-color', 'red');
