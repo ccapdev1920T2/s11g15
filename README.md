@@ -54,20 +54,24 @@ npm install --save-exact grunt-contrib-cssmin
 npm install --save-exact grunt-contrib-watch
 npm install --save helmet
 ```
-4. Run the following files to set up necessary documents in the database.
+4. Open the `db.js` file in the models folder. You will see the following on line 2:
+`const url = process.env.MONGODB_URI || 'mongodb+srv://dbUser:user123@foodbites-f5dfx.mongodb.net/test';`.
+Change the line to this: `const url = 'mongodb://localhost:27017/FoodBitesDB';`. This connects to localhost.
+
+5. Run the following files to set up necessary documents in the database.
 ```
 node add_data.js
 node add_products.js
 node add_rate.js
 node add_users.js
 ```
-5. The application is ready to be run. To do so, run the command `node index.js`. After running the command, you will see the following in your command prompt:
+6. The application is ready to be run. To do so, run the command `node index.js`. After running the command, you will see the following in your command prompt:
 ```
 Listening at port 3000
 Connected to: mongodb://localhost:27017/FoodBitesDB
 ```
-6. Next, paste the following path on a browser to run the web application: `http://localhost:3000/`.
-7. The path automatically navigates to the homepage and will be ready for testing.
+7. Next, paste the following path on a browser to run the web application: `http://localhost:3000/`.
+8. The path automatically navigates to the homepage and will be ready for testing.
 
 ### Heroku
 
@@ -76,7 +80,7 @@ The heroku deployment of the project can be accessed through this link:
 
 ### Log In Information
 
-The following accounts may be used to test the application. All accounts have been marked as verified and would not have any need to have a verification email sent to the accounts.
+The following accounts may be used to test the application. All accounts have been marked as verified and would not have any need to have a verification email sent to the accounts. 
 
 |     Email        |   Password    |
 | ---------------- | ------------- |
@@ -84,6 +88,8 @@ The following accounts may be used to test the application. All accounts have be
 | regina@test.com  | Reginatest246?|
 | mikayla@test.com | Mikatest246?  |
 | abigail@test.com | Abitest246?   |
+
+Tip: To create a fake email for registration, there are many sites that generates fake emails. In this case, the authors used `https://10minutemail.com/`. You may use this to get the verification link for a new account.
 
 ## Dependencies
 * Mongoose
