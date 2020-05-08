@@ -33,6 +33,7 @@ function showMenuModal(menuID) {
     var popup = document.getElementById(menuID);
 
     popup.style.display = "block";
+    $("#" + menuID + "-input-quantity").css('border-color', 'lightgray');
 
 }
 
