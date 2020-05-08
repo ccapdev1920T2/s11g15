@@ -1,7 +1,7 @@
 function appendProduct(menuID, menuImg, menuPrice, menuName) {
 
     var quantity = parseInt($("#" + menuID + "-input-quantity").val());
-    var total = (parseInt(quantity) * parseFloat(menuPrice)).toFixed(2)
+    var total = (parseInt(quantity) * parseFloat(menuPrice)).toFixed(2);
 
     if (quantity > 0){
         if ($("#cart-item-" + menuID + ".cart-show").length) {
